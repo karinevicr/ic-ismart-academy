@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Estudo - StudyPal</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="logo">
+                <span class="mascot">🦉</span>
+                <span>StudyPal</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="methods.html" class="active">Métodos</a></li>
+                <li><a href="progress.html">Progresso</a></li>
+                <li><a href="enem.html">ENEM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>></span>
+            <span>Métodos</span>
+        </div>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>🧠 Métodos de Estudo</h1>
+            <p>Descubra técnicas eficazes para potencializar seu aprendizado</p>
+        </div>
+
+        <!-- Pomodoro Timer -->
+        <div class="card fade-in">
+            <h2 style="color: var(--purple-dark); margin-bottom: 2rem;">
+                🍅 Timer Pomodoro
+            </h2>
+            <p style="color: var(--gray-medium); margin-bottom: 2rem; text-align: center;">
+                A técnica Pomodoro divide o estudo em blocos de 25 minutos com pausas de 5 minutos
+            </p>
+            <div style="text-align: center;">
+                <button class="btn btn-primary" onclick="startPomodoro()" style="font-size: 1.2rem; padding: 1rem 2rem;">
+                    ⏱️ Iniciar Sessão Pomodoro
+                </button>
+            </div>
+        </div>
+
+        <!-- Study Techniques -->
+        <div class="card fade-in" style="margin-top: 2rem;">
+            <h2 style="color: var(--purple-dark); margin-bottom: 2rem;">
+                📚 Técnicas de Estudo
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <!-- Feynman Technique -->
+                <div class="method-card" onclick="openTechnique('feynman')">
+                    <div class="method-icon">🧠</div>
+                    <h3>Técnica Feynman</h3>
+                    <p>Aprenda explicando conceitos em linguagem simples</p>
+                </div>
+
+                <!-- Active Recall -->
+                <div class="method-card" onclick="openTechnique('active-recall')">
+                    <div class="method-icon">🧩</div>
+                    <h3>Recordação Ativa</h3>
+                    <p>Teste seu conhecimento sem consultar materiais</p>
+                </div>
+
+                <!-- Spaced Repetition -->
+                <div class="method-card" onclick="openTechnique('spaced-repetition')">
+                    <div class="method-icon">📅</div>
+                    <h3>Repetição Espaçada</h3>
+                    <p>Revise conteúdo em intervalos crescentes</p>
+                </div>
+
+                <!-- Mind Maps -->
+                <div class="method-card" onclick="openTechnique('mind-maps')">
+                    <div class="method-icon">🗺️</div>
+                    <h3>Mapas Mentais</h3>
+                    <p>Organize informações de forma visual</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Study Environment Tips -->
+        <div class="card fade-in" style="margin-top: 2rem;">
+            <h2 style="color: var(--purple-dark); margin-bottom: 2rem;">
+                🏠 Ambiente de Estudo Ideal
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔇</div>
+                    <h4 style="color: var(--purple-dark); margin-bottom: 0.5rem;">Silêncio</h4>
+                    <p style="color: var(--gray-medium); font-size: 0.9rem;">Ambiente quieto ou com ruído branco</p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💡</div>
+                    <h4 style="color: var(--purple-dark); margin-bottom: 0.5rem;">Iluminação</h4>
+                    <p style="color: var(--gray-medium); font-size: 0.9rem;">Luz natural ou artificial adequada</p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🪑</div>
+                    <h4 style="color: var(--purple-dark); margin-bottom: 0.5rem;">Ergonomia</h4>
+                    <p style="color: var(--gray-medium); font-size: 0.9rem;">Mesa e cadeira confortáveis</p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+                    <h4 style="color: var(--purple-dark); margin-bottom: 0.5rem;">Sem Distrações</h4>
+                    <p style="color: var(--gray-medium); font-size: 0.9rem;">Celular em modo silencioso</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Study Tips -->
+        <div class="card fade-in" style="margin-top: 2rem; background: var(--purple-ultra-light);">
+            <h3 style="color: var(--purple-dark); margin-bottom: 1rem;">
+                💡 Dicas Gerais de Estudo
+            </h3>
+            <ul style="color: var(--gray-dark); line-height: 1.8;">
+                <li><strong>Horário consistente:</strong> Estude sempre nos mesmos horários</li>
+                <li><strong>Pausas regulares:</strong> Faça breaks a cada 25-50 minutos</li>
+                <li><strong>Hidratação:</strong> Mantenha-se bem hidratado</li>
+                <li><strong>Sono adequado:</strong> Durma 7-8 horas para consolidar a memória</li>
+                <li><strong>Exercícios físicos:</strong> Atividade física melhora a capacidade cognitiva</li>
+                <li><strong>Alimentação balanceada:</strong> Evite estudar com fome ou muito cheio</li>
+                <li><strong>Revisão ativa:</strong> Sempre teste seu conhecimento</li>
+                <li><strong>Metas claras:</strong> Defina objetivos específicos para cada sessão</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Pomodoro Modal -->
+    <div id="pomodoroModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🍅 Timer Pomodoro</h3>
+                <button class="close-btn" onclick="closePomodoro()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="timer-container">
+                    <div id="timerDisplay" class="timer-display">25:00</div>
+                    <div id="phaseDisplay" class="phase-display">📚 Sessão de Estudo - Ciclo 1</div>
+                </div>
+                <div class="timer-controls">
+                    <button id="startPauseBtn" class="btn btn-primary" onclick="toggleTimer()">▶️ Começar</button>
+                    <button class="btn btn-secondary" onclick="resetTimer()">🔄 Resetar</button>
+                    <button class="btn btn-secondary" onclick="skipPhase()">⏭️ Pular</button>
+                </div>
+                
+                <!-- Pomodoro Instructions -->
+                <div style="margin-top: 2rem; padding: 1rem; background: var(--gray-light); border-radius: 10px;">
+                    <h4 style="color: var(--purple-dark); margin-bottom: 0.5rem;">Como funciona:</h4>
+                    <ul style="font-size: 0.9rem; color: var(--gray-dark);">
+                        <li><strong>25 min:</strong> Foque totalmente nos estudos</li>
+                        <li><strong>5 min:</strong> Pausa curta para descansar</li>
+                        <li><strong>15 min:</strong> Pausa longa a cada 4 ciclos</li>
+                        <li><strong>Repita:</strong> Continue até atingir sua meta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/methods.js"></script>
+</body>
+</html>

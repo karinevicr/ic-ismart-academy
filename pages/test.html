@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - StudyPal</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🔧 Página de Teste</h1>
+            <p>Se você consegue ver esta página, significa que:</p>
+            <ul>
+                <li>✅ O CSS está carregando corretamente</li>
+                <li>✅ Os caminhos estão funcionando</li>
+                <li id="js-test">❌ JavaScript: aguardando...</li>
+            </ul>
+            
+            <div style="margin-top: 2rem;">
+                <button class="btn btn-primary" onclick="testJS()">Testar JavaScript</button>
+                <button class="btn btn-secondary" onclick="testLocalStorage()">Testar LocalStorage</button>
+            </div>
+            
+            <div id="test-results" style="margin-top: 1rem; padding: 1rem; background: var(--gray-light); border-radius: 10px; display: none;">
+                <h3>Resultados dos Testes:</h3>
+                <ul id="results-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('js-test').innerHTML = '✅ JavaScript: funcionando!';
+            document.getElementById('js-test').style.color = 'green';
+        });
+        
+        function testJS() {
+            const results = document.getElementById('results-list');
+            const container = document.getElementById('test-results');
+            
+            results.innerHTML = '';
+            container.style.display = 'block';
+            
+            // Teste 1: Função motivacional
+            try {
+                const message = getRandomMotivationalMessage();
+                results.innerHTML += `<li>✅ getRandomMotivationalMessage(): ${message}</li>`;
+            } catch (e) {
+                results.innerHTML += `<li>❌ getRandomMotivationalMessage(): ${e.message}</li>`;
+            }
+            
+            // Teste 2: Adicionar atividade
+            try {
+                addRecentActivity('🔧 Teste de funcionalidade');
+                results.innerHTML += '<li>✅ addRecentActivity(): funcionando</li>';
+            } catch (e) {
+                results.innerHTML += `<li>❌ addRecentActivity(): ${e.message}</li>`;
+            }
+            
+            // Teste 3: Formatação de tempo
+            try {
+                const time = formatTimeAgo(new Date().toISOString());
+                results.innerHTML += `<li>✅ formatTimeAgo(): ${time}</li>`;
+            } catch (e) {
+                results.innerHTML += `<li>❌ formatTimeAgo(): ${e.message}</li>`;
+            }
+        }
+        
+        function testLocalStorage() {
+            const results = document.getElementById('results-list');
+            const container = document.getElementById('test-results');
+            
+            results.innerHTML = '';
+            container.style.display = 'block';
+            
+            try {
+                localStorage.setItem('test', 'funciona');
+                const value = localStorage.getItem('test');
+                localStorage.removeItem('test');
+                
+                if (value === 'funciona') {
+                    results.innerHTML += '<li>✅ LocalStorage: funcionando perfeitamente</li>';
+                } else {
+                    results.innerHTML += '<li>❌ LocalStorage: valor incorreto</li>';
+                }
+            } catch (e) {
+                results.innerHTML += `<li>❌ LocalStorage: ${e.message}</li>`;
+            }
+            
+            // Verificar dados existentes
+            const subjects = JSON.parse(localStorage.getItem('subjects') || '[]');
+            const activities = JSON.parse(localStorage.getItem('recentActivities') || '[]');
+            
+            results.innerHTML += `<li>📊 Matérias cadastradas: ${subjects.length}</li>`;
+            results.innerHTML += `<li>📋 Atividades recentes: ${activities.length}</li>`;
+        }
+    </script>
+</body>
+</html>

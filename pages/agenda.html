@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Estudos - StudyPal</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="logo">
+                <span class="mascot">🦉</span>
+                <span>StudyPal</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="agenda.html" class="active">Agenda</a></li>
+                <li><a href="methods.html">Métodos</a></li>
+                <li><a href="progress.html">Progresso</a></li>
+                <li><a href="enem.html">ENEM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>></span>
+            <span>Agenda</span>
+        </div>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>📅 Agenda de Estudos</h1>
+            <p>Organize suas matérias, horários e mantenha sua rotina em dia</p>
+        </div>
+
+        <!-- Add Subject Form -->
+        <div class="card fade-in">
+            <h2 style="color: var(--purple-dark); margin-bottom: 2rem;">
+                ➕ Adicionar Nova Matéria
+            </h2>
+            
+            <form id="subjectForm">
+                <div class="form-group">
+                    <label for="subjectName">Nome da Matéria</label>
+                    <input type="text" id="subjectName" class="form-control" 
+                           placeholder="Ex: Matemática, História, Química..." required>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="studyTime">Horário de Estudo</label>
+                        <input type="time" id="studyTime" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studyDay">Dia da Semana</label>
+                        <select id="studyDay" class="form-control" required>
+                            <option value="">Selecione o dia</option>
+                            <option value="Segunda">Segunda-feira</option>
+                            <option value="Terça">Terça-feira</option>
+                            <option value="Quarta">Quarta-feira</option>
+                            <option value="Quinta">Quinta-feira</option>
+                            <option value="Sexta">Sexta-feira</option>
+                            <option value="Sábado">Sábado</option>
+                            <option value="Domingo">Domingo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="studyDuration">Duração (minutos)</label>
+                    <input type="number" id="studyDuration" class="form-control" 
+                           placeholder="Ex: 60" min="15" max="300" value="60">
+                </div>
+
+                <div class="form-group">
+                    <label for="studyNotes">Observações (opcional)</label>
+                    <textarea id="studyNotes" class="form-control" rows="3" 
+                              placeholder="Adicione observações, objetivos ou tópicos específicos..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    ➕ Adicionar Matéria
+                </button>
+            </form>
+        </div>
+
+        <!-- Subject List -->
+        <div class="card fade-in" style="margin-top: 2rem;">
+            <h2 style="color: var(--purple-dark); margin-bottom: 2rem;">
+                📚 Suas Matérias
+            </h2>
+            
+            <div id="subjectList">
+                <p style="color: var(--gray-medium); text-align: center; padding: 2rem;">
+                    Nenhuma matéria cadastrada ainda. Adicione sua primeira matéria acima!
+                </p>
+            </div>
+        </div>
+
+        <!-- Weekly Schedule -->
+        <div class="card fade-in" style="margin-top: 2rem;">
+            <h2 style="color: var(--purple-dark); margin-bottom: 2rem;">
+                🗓️ Cronograma Semanal
+            </h2>
+            
+            <div id="weeklySchedule" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <!-- Schedule will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Study Tips -->
+        <div class="card fade-in" style="margin-top: 2rem; background: var(--purple-ultra-light);">
+            <h3 style="color: var(--purple-dark); margin-bottom: 1rem;">
+                💡 Dicas para uma Agenda Eficiente
+            </h3>
+            <ul style="color: var(--gray-dark); line-height: 1.8;">
+                <li><strong>Seja realista:</strong> Não sobrecarregue sua agenda com muito conteúdo</li>
+                <li><strong>Intervalos são importantes:</strong> Deixe tempo para descanso entre as matérias</li>
+                <li><strong>Priorize as dificuldades:</strong> Estude matérias mais difíceis quando estiver mais alerta</li>
+                <li><strong>Seja consistente:</strong> Mantenha horários regulares para criar o hábito</li>
+                <li><strong>Flexibilidade:</strong> Ajuste conforme necessário, mas tente manter a rotina</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/agenda.js"></script>
+</body>
+</html>

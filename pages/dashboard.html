@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StudyPal</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="logo">
+                <span class="mascot">🦉</span>
+                <span>StudyPal</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="methods.html">Métodos</a></li>
+                <li><a href="progress.html">Progresso</a></li>
+                <li><a href="enem.html">ENEM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>></span>
+            <span>Dashboard</span>
+        </div>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>📊 Dashboard</h1>
+            <p>Acompanhe seu progresso e mantenha-se motivado</p>
+        </div>
+
+        <!-- Motivation Container -->
+        <div id="motivationContainer"></div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalSubjects">0</div>
+                <div class="stat-label">📚 Matérias</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="weeklyProgress">0%</div>
+                <div class="stat-label">📈 Progresso Semanal</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="streak">0</div>
+                <div class="stat-label">🔥 Sequência</div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card fade-in" style="margin-top: 2rem;">
+            <h3 style="color: var(--purple-dark); margin-bottom: 1.5rem;">
+                ⚡ Ações Rápidas
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <button class="btn btn-primary" onclick="completeTask()">
+                    ✅ Completar Tarefa
+                </button>
+                <button class="btn btn-secondary" onclick="startPomodoro()">
+                    🍅 Iniciar Pomodoro
+                </button>
+                <button class="btn btn-secondary" onclick="showMotivation()">
+                    💪 Mensagem Motivacional
+                </button>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card fade-in" style="margin-top: 2rem;">
+            <h3 style="color: var(--purple-dark); margin-bottom: 1.5rem;">
+                📋 Atividades Recentes
+            </h3>
+            <div id="recentActivities">
+                <p style="text-align: center; color: var(--gray-medium);">Nenhuma atividade recente.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
