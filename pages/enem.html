@@ -1,23 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENEM</title>
+    <title>ENEM - StudyPal</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Sobre o ENEM</h1>
-        <nav>
-            <a href="dashboard.html">Dashboard</a> |
-            <a href="agenda.html">Agenda</a> |
-            <a href="methods.html">Métodos</a> |
-            <a href="progress.html">Progresso</a> |
-            <a href="enem.html">ENEM</a>
-        </nav>
-    </header>
-    <main>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="mascot">🦉</span>
+                <span>StudyPal</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="methods.html">Métodos</a></li>
+                <li><a href="progress.html">Progresso</a></li>
+                <li><a href="enem.html" class="active">ENEM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>Sobre o ENEM</h1>
+            <p>Tudo que você precisa saber sobre o Exame Nacional do Ensino Médio</p>
+        </div>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>></span>
+            <span>ENEM</span>
+        </div>
         <section>
             <h2>O que é o ENEM?</h2>
             <p>O Exame Nacional do Ensino Médio (ENEM) é uma das principais portas de entrada para o ensino superior no Brasil. Ele avalia o desempenho dos estudantes e pode ser utilizado para ingresso em universidades públicas e privadas, além de programas de bolsas e financiamentos.</p>
@@ -140,9 +160,41 @@
                 </div>
             </div>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Seu Projeto</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <span class="mascot">🦉</span>
+                    <span>StudyPal</span>
+                </div>
+                <p>Seu companheiro de estudos para o sucesso acadêmico.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="agenda.html">Agenda de Estudos</a></li>
+                    <li><a href="methods.html">Métodos de Estudo</a></li>
+                    <li><a href="progress.html">Acompanhamento</a></li>
+                    <li><a href="enem.html">ENEM</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 StudyPal. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
