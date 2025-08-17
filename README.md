@@ -267,5 +267,3 @@ Para contribuir com o projeto:
 **StudyPal** - Transformando sua jornada de estudos! 🚀📚
 
 *Desenvolvido com ❤️ para estudantes que buscam excelência acadêmica.*
-#   i c - i s m a r t - a c a d e m y  
- 
