@@ -179,6 +179,7 @@ function showPomodoroNotification(message) {
 // Outras técnicas de estudo
 function openTechnique(techniqueName) {
     let content = '';
+    let videoUrl = '';
     
     switch(techniqueName) {
         case 'feynman':
@@ -193,6 +194,7 @@ function openTechnique(techniqueName) {
                 </ol>
                 <p><strong>Dica:</strong> Imagine que está explicando para uma criança!</p>
             `;
+            videoUrl = 'https://www.youtube.com/watch?v=TVHUs67kwRk';
             break;
         case 'active-recall':
             content = `
@@ -206,6 +208,7 @@ function openTechnique(techniqueName) {
                 </ul>
                 <p><strong>Dica:</strong> É mais eficaz que apenas reler!</p>
             `;
+            videoUrl = 'https://www.youtube.com/watch?v=IFCfn7zo63Q';
             break;
         case 'spaced-repetition':
             content = `
@@ -219,6 +222,8 @@ function openTechnique(techniqueName) {
                 </ul>
                 <p><strong>Dica:</strong> Use aplicativos como Anki!</p>
             `;
+            // Corrigindo URL fornecida (faltava o 'h' em 'https')
+            videoUrl = 'https://www.youtube.com/watch?v=qiPiYNgWF88';
             break;
         case 'mind-maps':
             content = `
@@ -232,10 +237,11 @@ function openTechnique(techniqueName) {
                 </ul>
                 <p><strong>Dica:</strong> Ótimo para matérias com muitos conceitos!</p>
             `;
+            videoUrl = 'https://www.youtube.com/watch?v=m1qW0wPJV1M';
             break;
     }
     
-    showTechniqueModal(content);
+    showTechniqueModal(content, videoUrl);
 }
 
 function showTechniqueModal(content) {
@@ -256,16 +262,29 @@ function showTechniqueModal(content) {
     modal.innerHTML = `
         <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 500px; max-height: 80vh; overflow-y: auto;">
             ${content}
-            <button onclick="this.closest('.modal').remove()" 
-                    style="margin-top: 1rem; padding: 0.5rem 1rem; background: var(--purple-primary); color: white; border: none; border-radius: 5px; cursor: pointer;">
-                Fechar
-            </button>
+            <div class="modal-actions">
+                <a href="#" class="tech-video-link modal-action" target="_blank" rel="noopener noreferrer">Ver vídeo explicativo</a>
+                <button class="modal-action" onclick="this.closest('.modal').remove()">Fechar</button>
+            </div>
         </div>
     `;
     
     modal.className = 'modal';
     document.body.appendChild(modal);
-    
+    // Se uma URL de vídeo foi passada via atributo dataset, conecte ao link
+    // (quando showTechniqueModal for chamada com 2 args, o segundo é o vídeo)
+    // A compatibilidade com navegadores antigos não é crítica aqui.
+    const args = arguments;
+    if (args && args[1]) {
+        const link = modal.querySelector('.tech-video-link');
+        if (link) {
+            link.href = args[1];
+        }
+    } else {
+        // Se nenhum vídeo disponível, esconder o link
+        const link = modal.querySelector('.tech-video-link');
+        if (link) link.style.display = 'none';
+    }
     // Fechar ao clicar fora
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
