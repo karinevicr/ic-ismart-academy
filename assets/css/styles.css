@@ -529,7 +529,8 @@ body {
 /* Cards de métodos */
 .methods-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Forçar 2 colunas em telas médias/grandes para ficar 2x2 (duas em cima, duas embaixo) */
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -538,6 +539,11 @@ body {
     background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-light) 100%);
     color: var(--white);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
     transition: all 0.3s ease;
 }
 
@@ -546,8 +552,16 @@ body {
 }
 
 .method-icon {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    color: var(--white);
 }
 
 /* Dashboard grid */
@@ -1047,4 +1061,33 @@ body {
         flex-direction: column;
         align-items: center;
     }
+}
+
+/* Modal action buttons (reutilizáveis) */
+.modal-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background: var(--purple-primary);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none; /* para <a> */
+    min-width: 110px; /* garante largura mínima igual */
+    box-sizing: border-box;
+}
+
+.modal-action.secondary {
+    background: #111827; /* exemplo de cor secundária, se quiser diferença */
 }
