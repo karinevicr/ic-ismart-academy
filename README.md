@@ -1,4 +1,4 @@
-# 🦉 StudyPal - Sistema de Gestão de Estudos
+# 🦉 Aprenda Já - Sistema de Gestão de Estudos
 
 > **Seu companheiro digital para organizar estudos, controlar o tempo e acompanhar o progresso acadêmico.**
 
@@ -14,7 +14,7 @@
 
 ## 🎯 Sobre o Projeto
 
-O **StudyPal** é uma aplicação web desenvolvida para estudantes que desejam:
+O **Aprenda Já** é uma aplicação web desenvolvida para estudantes que desejam:
 - Organizar suas matérias e horários de estudo
 - Utilizar a técnica Pomodoro para melhor concentração
 - Acompanhar seu progresso e definir metas
@@ -74,7 +74,7 @@ Páginas secundárias da aplicação:
 ## ✨ Funcionalidades
 
 ### 🏠 Página Principal (`index.html`)
-- Landing page atrativa com apresentação do StudyPal
+- Landing page atrativa com apresentação do Aprenda Já
 - Navegação para todas as seções
 - Design responsivo e moderno
 
@@ -198,7 +198,7 @@ graph TD
 
 ## 🎨 Sistema de Cores
 
-O StudyPal usa um sistema de cores consistente definido em variáveis CSS:
+O Aprenda Já usa um sistema de cores consistente definido em variáveis CSS:
 
 ```css
 :root {
@@ -264,6 +264,6 @@ Para contribuir com o projeto:
 
 
 
-**StudyPal** - Transformando sua jornada de estudos! 🚀📚
+**Aprenda Já** - Transformando sua jornada de estudos! 🚀📚
 
 *Desenvolvido com ❤️ para estudantes que buscam excelência acadêmica.*

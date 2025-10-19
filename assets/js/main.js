@@ -1,4 +1,4 @@
-// StudyPal - JavaScript Principal
+// Aprenda Já - JavaScript Principal
 // Funções compartilhadas e utilitárias
 
 // Mensagens motivacionais
@@ -17,7 +17,7 @@ const motivationalMessages = [
 
 // Inicialização geral
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('StudyPal: Página carregada!');
+    console.log('Aprenda Já: Página carregada!');
     initializeAnimations();
     loadTheme();
 });

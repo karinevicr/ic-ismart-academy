@@ -125,7 +125,7 @@ function updateTimerDisplay() {
     
     // Atualizar título da página se estiver rodando
     if (pomodoroRunning) {
-        document.title = `${display} - StudyPal`;
+    document.title = `${display} - Aprenda Já`;
     }
 }
 
@@ -169,7 +169,7 @@ function showPomodoroNotification(message) {
     
     // Tentar mostrar notificação do navegador
     if ('Notification' in window && Notification.permission === 'granted') {
-        new Notification('StudyPal Pomodoro', {
+    new Notification('Aprenda Já Pomodoro', {
             body: message,
             icon: '🍅'
         });

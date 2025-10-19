@@ -37,7 +37,7 @@ function renderProgressChart() {
         chartContainer.innerHTML = `
             <div style="text-align: center; color: var(--gray-medium); padding: 2rem;">
                 <p>Nenhum dado de progresso ainda.</p>
-                <p>Comece a usar o StudyPal para ver suas estatísticas!</p>
+                <p>Comece a usar o Aprenda Já para ver suas estatísticas!</p>
             </div>
         `;
         return;
@@ -261,7 +261,7 @@ function exportProgress() {
     
     const link = document.createElement('a');
     link.href = url;
-    link.download = `studypal-progress-${new Date().toISOString().split('T')[0]}.json`;
+    link.download = `aprendaja-progress-${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
